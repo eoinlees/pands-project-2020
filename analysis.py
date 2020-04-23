@@ -55,3 +55,8 @@ print(df.describe())
 # 
 print(df.groupby('species').size())
 
+# Import andrews curves to visualise 
+from pandas.plotting import andrews_curves
+plt.figure()
+andrews_curves(df, 'species')
+plt.show()
