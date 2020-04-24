@@ -40,8 +40,8 @@ species = df.species
 #plt.show()
 
 # use seaborn module to plot matrix of plots
-#sns.pairplot(df, hue="species")
-#plt.show()
+sns.pairplot(df, hue="species")
+plt.show()
 
 sns.FacetGrid(df, hue="species", height=5).map(plt.scatter,"sepal_length","sepal_width").add_legend()
 plt.show()
@@ -52,6 +52,12 @@ plt.show()
 # Describe statistical summary
 print(df.describe())
 
+#Display in neater orientation : https://github.com/RitRa/Project2018-iris
+summary = df.describe()
+summary = summary.transpose()
+summary.head()
+print(summary.head())
+
 # 
 print(df.groupby('species').size())
 
@@ -59,4 +65,13 @@ print(df.groupby('species').size())
 from pandas.plotting import andrews_curves
 plt.figure()
 andrews_curves(df, 'species')
+plt.show()
+
+
+#Histograms allow us to isolate setosa species in the data for petal length and width
+# source : https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
+sns.FacetGrid(df,hue="species",height=3).map(sns.distplot,"petal_length").add_legend()
+sns.FacetGrid(df,hue="species",height=3).map(sns.distplot,"petal_width").add_legend()
+sns.FacetGrid(df,hue="species",height=3).map(sns.distplot,"sepal_length").add_legend()
+sns.FacetGrid(df,hue="species",height=3).map(sns.distplot,"sepal_width").add_legend()
 plt.show()
