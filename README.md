@@ -16,8 +16,45 @@ Show graph with details
 
 # Main Body
 
-## Length vs with scatter plots
+### Length vs width scatter plots
 
+
+
+### Box plot and violin plot
+
+
+### Pairplot - Overview
+
+sns.set_style("whitegrid")
+sns.pairplot(df, hue="species")
+plt.savefig("iris_pairplot")
+plt.clf()
+
+
+## Detailed Analysis
+
+Using the information from above we can look in more detail at the data provided
+
+#### Petal Length
+
+
+#### Petal Width
+
+
+#### Sepal Length
+
+
+#### Sepal Length
+
+
+
+
+
+# Conclusions
+
+Petal width can be used to classify one vs other vs otehr etc. 
+
+### Classifications
 
 
 
@@ -34,3 +71,7 @@ https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea
 https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
 
 https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
+
+https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
+
+https://www.youtube.com/watch?v=5dLG3JDk2VU
