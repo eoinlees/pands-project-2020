@@ -19,22 +19,38 @@ Show graph with details
 
 ### Length vs width scatter plots
 
-
-Inline-style: 
+#### Petal Length Vs. Petal Width
 ![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/all_petal_length_vs_petal_width.png "Logo Title Text 1")
 
+
+#### Sepal Length Vs. Sepal Width
+
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/all_sepal_length_vs_sepal_width.png "Logo Title Text 1")
 
 
 
 ### Box plot and violin plot
 
+#### Box Plot
+
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/boxplot.png "Logo Title Text 1")
+
+
+#### Violin Plot
+
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/violinplot.png "Logo Title Text 1")
 
 ### Pairplot - Overview
 
+````
 sns.set_style("whitegrid")
 sns.pairplot(df, hue="species")
 plt.savefig("iris_pairplot")
 plt.clf()
+````
+
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/iris_pairplot.png "Logo Title Text 1")
+
 
 
 ## Detailed Analysis
@@ -43,15 +59,27 @@ Using the information from above we can look in more detail at the data provided
 
 #### Petal Length
 
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_length_hist.png "Logo Title Text 1")
+
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_length_species.png "Logo Title Text 1")
 
 #### Petal Width
 
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_width_hist.png "Logo Title Text 1")
+
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_width_species.png "Logo Title Text 1")
 
 #### Sepal Length
 
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_length_hist.png "Logo Title Text 1")
 
-#### Sepal Length
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_length_species.png "Logo Title Text 1")
 
+#### Sepal Width
+
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_width_hist.png "Logo Title Text 1")
+
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_width_species.png "Logo Title Text 1")
 
 
 
