@@ -1,4 +1,5 @@
-# pands-project-2020
+# **pands-project-2020**
+
 
 # Introduction
 
@@ -17,6 +18,11 @@ Show graph with details
 # Main Body
 
 ### Length vs width scatter plots
+
+
+Inline-style: 
+![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/all_petal_length_vs_petal_width.png "Logo Title Text 1")
+
 
 
 
@@ -75,3 +81,5 @@ https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
 https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
 
 https://www.youtube.com/watch?v=5dLG3JDk2VU
+
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
