@@ -15,6 +15,18 @@ info regarding how the data is presented. the file type. its source.
 
 Show graph with details
 
+#### Modules and data imported
+````
+# Import necessary modules to python
+import numpy as np 
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Import data
+df = pd.read_csv("iris.csv")
+````
+
 # Main Body
 
 ### Length vs width scatter plots
@@ -90,6 +102,8 @@ Petal width can be used to classify one vs other vs otehr etc.
 
 ### Classifications
 
+
+***
 
 
 # Sources
