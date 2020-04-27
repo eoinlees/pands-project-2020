@@ -62,6 +62,36 @@ plt.savefig("petal_width_hist.png")
 plt.clf()
 
 
+#Box plot of variables
+# https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
+
+sns.set(style="ticks") 
+plt.figure(figsize=(12,10))
+plt.subplot(2,2,1)
+sns.boxplot(x='species',y='sepal_length',data=df)
+plt.subplot(2,2,2)
+sns.boxplot(x='species',y='sepal_width',data=df)
+plt.subplot(2,2,3)
+sns.boxplot(x='species',y='petal_length',data=df)
+plt.subplot(2,2,4)
+sns.boxplot(x='species',y='petal_width',data=df)
+plt.savefig("boxplot.png")
+plt.clf()
+
+#Violin plot of variables
+# Read info from this : https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
+sns.set(style="whitegrid")
+plt.figure(figsize=(12,10))
+plt.subplot(2,2,1)
+sns.violinplot(x='species',y='sepal_length',data=df)
+plt.subplot(2,2,2)
+sns.violinplot(x='species',y='sepal_width',data=df)
+plt.subplot(2,2,3)
+sns.violinplot(x='species',y='petal_length',data=df)
+plt.subplot(2,2,4)
+sns.violinplot(x='species',y='petal_width',data=df)
+plt.savefig("violinplot.png")
+plt.clf()
 
 # Scatter plot sepal length vs width
 plt.scatter(df['sepal_length'], df['sepal_width'])
