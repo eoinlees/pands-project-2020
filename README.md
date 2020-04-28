@@ -114,13 +114,13 @@ plt.savefig("all_petal_length_vs_petal_width.png")
 plt.clf()
 ````
 It uses the scatter function of matplotlib to plot the petal length vs with imported from the data using teh df function. It is then appropiatly labelled and saved to the curent repositry. The `plt.clf()` command is then used to ensure the plot is clear for the next command. 
- 
-![petal length vs width](https://github.com/eoinlees/pands-project-2020/blob/master/all_petal_length_vs_petal_width.png "petal length vs width")
 
+![petal length vs width](https://github.com/eoinlees/pands-project-2020/blob/master/all_petal_length_vs_petal_width.png "petal length vs width")
 
 #### Sepal Length Vs. Sepal Width
 
-
+The same method was used to produce the sepal length vs sepal width scatter plot. 
+````
 plt.scatter(df['sepal_length'], df['sepal_width'])
 plt.title("Sepal length vs. Sepal width")
 plt.xlabel("Sepal Length")
@@ -128,32 +128,109 @@ plt.ylabel("Sepal Width")
 
 plt.savefig("all_sepal_length_vs_sepal_width.png")
 plt.clf()
-
+````
 ![sepal length vs width](https://github.com/eoinlees/pands-project-2020/blob/master/all_sepal_length_vs_sepal_width.png "sepal length vs width")
 
+From an initial analysis of this data it shows how the points are clustered and without further investigation no real conclusions can be drawn. 
 
+The addition of the species to both of these scatterplots reveals a lot more about the data as shown below. 
 
-### Box plot and violin plot
+The code used to acheive this is as follows:
+````
+sns.set(style="whitegrid")
+plt.figure(figsize=(20,10))
+plt.subplot(1,2,1)
+sns.scatterplot(df['petal_length'], df['petal_width'],hue=df['species'])
+plt.title("Petal length vs. Petal width")
+plt.xlabel("Petal Length")
+plt.ylabel("Petal Width")
+plt.subplot(1,2,2)
+sns.scatterplot(df['sepal_length'], df['sepal_width'],hue=df['species'])
+plt.title("Sepal length vs. Sepal width")
+plt.xlabel("Sepal Length")
+plt.ylabel("Sepal Width")
+
+plt.savefig("scatterplot_species.png")
+plt.clf()
+````
+Instead of plotting the graphs with matplotlib, seaborn is used. This allows further customisation and the introduction of the hue to highlight the species. 
+
+It becomes immediatly apparent from this that a classification of at least one of the species can be made. 
+
+### Data summary
+
+The data provided is summarised in the `irissummaries.txt` document. It give a list of the variables, and breaks down each of their details under the headings: 
+* count - the total number of data 
+* mean - the mean value
+* std - the standard deviation
+* min - the minimum value
+* 25%
+* 50%
+* 75%
+* max - the maximum value
+
+This data can be visualised using the box plot and the violin plot. 
 
 #### Box Plot
 
-![Box plot](https://github.com/eoinlees/pands-project-2020/blob/master/boxplot.png "Box plot")
+The box plot was chosen as it gives a good visual representation of the data. The top and bottom represent the 75th and 25th percentiles. The median value is shown with the horizontal line and the rest is shown with the straight line known as the whiskers. Using this method we can easily see the outliers shown as the points on each graph. 
 
+the following code was used to produce the shown boxplot:
+````
+sns.set(style="ticks") 
+plt.figure(figsize=(12,10))
+plt.subplot(2,2,1)
+sns.boxplot(x='species',y='sepal_length',data=df)
+plt.subplot(2,2,2)
+sns.boxplot(x='species',y='sepal_width',data=df)
+plt.subplot(2,2,3)
+sns.boxplot(x='species',y='petal_length',data=df)
+plt.subplot(2,2,4)
+sns.boxplot(x='species',y='petal_width',data=df)
+plt.savefig("boxplot.png")
+plt.clf()
+````
+It draws heavily on the seaborn module in order to produce the plot. Matplotlib is used to arrange the plots using the `subplot` command. 
+
+![Box plot](https://github.com/eoinlees/pands-project-2020/blob/master/boxplot.png "Box plot")
 
 #### Violin Plot
 
+The violin plot performs a similar role as the box plot. It differs from the boxplot by showing the kernal density estimation of the underlying distribution.
+
+The kernal density estimation..... 
+
+````
+sns.set(style="whitegrid")
+plt.figure(figsize=(12,10))
+plt.subplot(2,2,1)
+sns.violinplot(x='species',y='sepal_length',data=df)
+plt.subplot(2,2,2)
+sns.violinplot(x='species',y='sepal_width',data=df)
+plt.subplot(2,2,3)
+sns.violinplot(x='species',y='petal_length',data=df)
+plt.subplot(2,2,4)
+sns.violinplot(x='species',y='petal_width',data=df)
+plt.savefig("violinplot.png")
+plt.clf()
+````
 ![Violin Plot](https://github.com/eoinlees/pands-project-2020/blob/master/violinplot.png "Violin Plot")
 
 ### Pairplot - Overview
 
+The seaborn module allows for the production of a pairplot which compares all the variables against each other on one series of plots.
+This feature is preformed with the straightforward code shown below: 
 ````
 sns.set_style("whitegrid")
 sns.pairplot(df, hue="species")
 plt.savefig("iris_pairplot")
 plt.clf()
 ````
+It is an extremely useful tool in data analytics. It provides an immediate overview of the data being worked with and allows us to identify any possible relationships at a high level. 
 
 ![Pair Plot](https://github.com/eoinlees/pands-project-2020/blob/master/iris_pairplot.png "Pair Plot")
+
+The pair plot alows us to identiy the relationship in petal length.......
 
 
 
