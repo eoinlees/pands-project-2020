@@ -92,15 +92,44 @@ The modules imported have the following functions:
 
 # Main Body
 
+The following is a quick analysis of the iris data set. It's purpose is to demonstrate a a wide array of python techniques for data analysis along with providing a method for classifying the species in the data using vidual means. 
+
+
+
 ### Length vs width scatter plots
 
+To begin with a simple length vs. width scatter plot for both the petal and sepal measurments was plotted. 
+These plots show all of the data with no differentiation of species. Its gives a good idea of how similar the data is across all species of iris studied. 
+
 #### Petal Length Vs. Petal Width
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/all_petal_length_vs_petal_width.png "Logo Title Text 1")
+
+In order to produce the petal elngth vs petal width plot the following code was used:
+````
+plt.scatter(df['petal_length'], df['petal_width'])
+plt.title("Petal length vs. Petal width")
+plt.xlabel("Petal Length")
+plt.ylabel("Petal Width")
+
+plt.savefig("all_petal_length_vs_petal_width.png")
+plt.clf()
+````
+It uses the scatter function of matplotlib to plot the petal length vs with imported from the data using teh df function. It is then appropiatly labelled and saved to the curent repositry. The `plt.clf()` command is then used to ensure the plot is clear for the next command. 
+ 
+![petal length vs width](https://github.com/eoinlees/pands-project-2020/blob/master/all_petal_length_vs_petal_width.png "petal length vs width")
 
 
 #### Sepal Length Vs. Sepal Width
 
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/all_sepal_length_vs_sepal_width.png "Logo Title Text 1")
+
+plt.scatter(df['sepal_length'], df['sepal_width'])
+plt.title("Sepal length vs. Sepal width")
+plt.xlabel("Sepal Length")
+plt.ylabel("Sepal Width")
+
+plt.savefig("all_sepal_length_vs_sepal_width.png")
+plt.clf()
+
+![sepal length vs width](https://github.com/eoinlees/pands-project-2020/blob/master/all_sepal_length_vs_sepal_width.png "sepal length vs width")
 
 
 
@@ -108,12 +137,12 @@ The modules imported have the following functions:
 
 #### Box Plot
 
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/boxplot.png "Logo Title Text 1")
+![Box plot](https://github.com/eoinlees/pands-project-2020/blob/master/boxplot.png "Box plot")
 
 
 #### Violin Plot
 
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/violinplot.png "Logo Title Text 1")
+![Violin Plot](https://github.com/eoinlees/pands-project-2020/blob/master/violinplot.png "Violin Plot")
 
 ### Pairplot - Overview
 
@@ -124,7 +153,7 @@ plt.savefig("iris_pairplot")
 plt.clf()
 ````
 
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/iris_pairplot.png "Logo Title Text 1")
+![Pair Plot](https://github.com/eoinlees/pands-project-2020/blob/master/iris_pairplot.png "Pair Plot")
 
 
 
