@@ -111,6 +111,25 @@ plt.ylabel("Petal Width")
 plt.savefig("all_petal_length_vs_petal_width.png")
 plt.clf()
 
+# Scatter plots combined side by side with species hue added
+
+sns.set(style="whitegrid")
+plt.figure(figsize=(20,10))
+plt.subplot(1,2,1)
+sns.scatterplot(df['petal_length'], df['petal_width'],hue=df['species'])
+plt.title("Petal length vs. Petal width")
+plt.xlabel("Petal Length")
+plt.ylabel("Petal Width")
+plt.subplot(1,2,2)
+sns.scatterplot(df['sepal_length'], df['sepal_width'],hue=df['species'])
+plt.title("Sepal length vs. Sepal width")
+plt.xlabel("Sepal Length")
+plt.ylabel("Sepal Width")
+
+plt.savefig("scatterplot_species.png")
+plt.clf()
+
+
 # use seaborn module to plot matrix of plots
 sns.set_style("whitegrid")
 sns.pairplot(df, hue="species")
@@ -119,16 +138,8 @@ plt.clf()
 
 
 
-# Edit this one to work with savefig
-sns.FacetGrid(df, hue="species", height=5).map(plt.scatter,"sepal_length","sepal_width").add_legend()
-#plt.show()
-plt.clf()
+# Describe statistical summary 
 
-sns.FacetGrid(df, hue="species", height=5).map(plt.scatter,"petal_length","petal_width").add_legend()
-#plt.show()
-
-# Describe statistical summary - This version not needed
-#print(df.describe())
 
 #Display in neater orientation : https://github.com/RitRa/Project2018-iris
 
