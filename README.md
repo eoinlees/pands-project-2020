@@ -293,11 +293,17 @@ plt.savefig("subplothistograms.png")
 plt.clf()
 ````
 
-reference https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/ for histogram creation
+reference [12]
 
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_length_hist.png "Logo Title Text 1")
+![Histograms](https://github.com/eoinlees/pands-project-2020/blob/master/subplothistograms.png "histograms subplot")
 
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_length_species.png "Logo Title Text 1")
+![Sepal Length](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_length_species.png "Sepal Length")
+
+![Sepal Width](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_width_species.png "Sepal Width")
+
+![Petal Length](https://github.com/eoinlees/pands-project-2020/blob/master/petal_length_species.png "Petal Length")
+
+![Petal Width](https://github.com/eoinlees/pands-project-2020/blob/master/petal_width_species.png "Petal Width")
 
 #### Histogram with added details
 
@@ -340,7 +346,7 @@ https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea
 
 https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
 
-https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
+[12] https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
 
 https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
 
