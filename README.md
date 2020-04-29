@@ -161,7 +161,13 @@ plt.clf()
 ````
 Instead of plotting the graphs with matplotlib, seaborn is used. This allows further customisation and the introduction of the hue to highlight the species. 
 
+![length vs width](https://github.com/eoinlees/pands-project-2020/blob/master/scatterplot_species.png "species scatterplot")
+
 It becomes immediatly apparent from this that a classification of at least one of the species can be made. 
+
+With both petal length and width it is easy to pick out the Iris setosa. This can then be classified accourdingly. It also shows a correlation in sepal length and width. Generally if there is a ahorter length sepal it will also have a correlating shorter width. 
+
+This correlation can somewhat be seen with the other two species of Iris in the sepal and petal. 
 
 ### Data summary
 
@@ -170,9 +176,9 @@ The data provided is summarised in the `irissummaries.txt` document. It give a l
 * mean - the mean value
 * std - the standard deviation
 * min - the minimum value
-* 25%
-* 50%
-* 75%
+* 25% - the 25th percentile
+* 50% - the 50th percentile
+* 75% - the 75th percentilea
 * max - the maximum value
 
 This data can be visualised using the box plot and the violin plot. 
@@ -221,6 +227,9 @@ plt.savefig("violinplot.png")
 plt.clf()
 ````
 ![Violin Plot](https://github.com/eoinlees/pands-project-2020/blob/master/violinplot.png "Violin Plot")
+
+From both the box plot and the violin plot we again can see the easily destinguishable setosa species in the petal width and length. 
+The other species are more closely related, however it is possible to draw conclusions using the data in the box and violin plot for petal width and length to identify each based on these measurments.  
 
 ### Pairplot - Overview
 
@@ -277,6 +286,7 @@ Petal width can be used to classify one vs other vs otehr etc.
 
 ### Classifications
 
+The simpliest method of classification is 
 
 ***
 
