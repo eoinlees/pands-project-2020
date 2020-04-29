@@ -171,7 +171,7 @@ This correlation can somewhat be seen with the other two species of Iris in the 
 
 ### Data summary
 
-The data provided is summarised in the `irissummaries.txt` document. It give a list of the variables, and breaks down each of their details under the headings: 
+The data provided is summarised in the `irissummaries.txt` document . It give a list of the variables, and breaks down each of their details under the headings: 
 * count - the total number of data 
 * mean - the mean value
 * std - the standard deviation
@@ -182,6 +182,8 @@ The data provided is summarised in the `irissummaries.txt` document. It give a l
 * max - the maximum value
 
 This data can be visualised using the box plot and the violin plot. 
+
+The data presented in 
 
 #### Box Plot
 
@@ -204,7 +206,7 @@ plt.clf()
 ````
 It draws heavily on the seaborn module in order to produce the plot. Matplotlib is used to arrange the plots using the `subplot` command. 
 
-![Box plot](https://github.com/eoinlees/pands-project-2020/blob/master/boxplot.png "Box plot")
+![Box plot](https://github.com/eoinlees/pands-project-2020/blob/master/boxplot.png "Box plot") [10]
 
 #### Violin Plot
 
@@ -226,7 +228,7 @@ sns.violinplot(x='species',y='petal_width',data=df)
 plt.savefig("violinplot.png")
 plt.clf()
 ````
-![Violin Plot](https://github.com/eoinlees/pands-project-2020/blob/master/violinplot.png "Violin Plot")
+![Violin Plot](https://github.com/eoinlees/pands-project-2020/blob/master/violinplot.png "Violin Plot") [9]
 
 From both the box plot and the violin plot we again can see the easily destinguishable setosa species in the petal width and length. 
 The other species are more closely related, however it is possible to draw conclusions using the data in the box and violin plot for petal width and length to identify each based on these measurments.  
@@ -253,8 +255,11 @@ The pair plot alows us to identiy the relationship in petal length.......
 
 Using the information from above we can look in more detail at the data provided
 
-#### Histogram Initially
+#### Histograms
 
+Taking an overall view of the data in histogram form a higher view we can see the variation across the plot. 
+
+These histograms were plotted in matplotlib using subplots to combine tehn together. 
 ````
 # Histogram for each variable:
 # Combine histograms in subplots to one png. 
@@ -292,33 +297,39 @@ plt.ylabel("Count")
 plt.savefig("subplothistograms.png")
 plt.clf()
 ````
+![Histograms](https://github.com/eoinlees/pands-project-2020/blob/master/subplothistograms.png "histograms subplot") [12]
 
-reference [12]
+It is clear a more detailed vew of each plot is needed. 
 
-![Histograms](https://github.com/eoinlees/pands-project-2020/blob/master/subplothistograms.png "histograms subplot")
+If we look at both sepal length and width it is clear to see that these measurments do not give us much opportunity to differentiate each species. We could draw some conclusions based on teh number of samples 
+
 
 ![Sepal Length](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_length_species.png "Sepal Length")
 
 ![Sepal Width](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_width_species.png "Sepal Width")
 
+
+Looking at Petal length we can identify Iris setosa easily. The data presented in Petal width is 
 ![Petal Length](https://github.com/eoinlees/pands-project-2020/blob/master/petal_length_species.png "Petal Length")
 
 ![Petal Width](https://github.com/eoinlees/pands-project-2020/blob/master/petal_width_species.png "Petal Width")
-
-#### Histogram with added details
 
 
 
 # Conclusions
 
-Petal width can be used to classify one vs other vs otehr etc. 
+Petal length can be used to classify Iris setosa. The data presented in the Petal Length histogram contains only two clusters it is possible to deduce Iris setosa from this. 
+
+An approxomation of Iris verginica and Iris versicolor can be made with the specied information added to this plot and could be used as a good estimation of a species based on measurment results. The classifications are shown below: 
 
 ### Classifications
 
 The simpliest method of classification is 
 
-***
 
+This data set is a good 
+
+Further analysis is possible to deduce a more accurate classification using machine learning techniques. The scikit learn module is reccomended for further research into the area of machine learning with python. [14]
 
 # Sources
 
@@ -338,18 +349,15 @@ The simpliest method of classification is
 
 [8] https://matplotlib.org/
 
-https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
+[9] https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
 
-https://github.com/RitRa/Project2018-iris
+[10] https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
 
-https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
+[11] https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
 
-https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
+[12] https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
 
-[12] https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
+[13] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
-https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
+[14]  https://scikit-learn.org/stable/
 
-https://www.youtube.com/watch?v=5dLG3JDk2VU
-
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
