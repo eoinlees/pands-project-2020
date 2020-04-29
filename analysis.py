@@ -10,53 +10,40 @@ import seaborn as sns
 # Import data
 df = pd.read_csv("iris.csv")
 
-# Histogram for each variable : https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
-# Sepal Length Histogram
-plt.figure(figsize = (20, 10)) 
-x = df.sepal_length
-  
+# Histogram for each variable:
+# Combine histograms in subplots to one png. 
+sns.set(style="whitegrid")
+plt.figure(figsize=(20,10))
+# Petal Width
+plt.subplot(2,2,1)
+x = df.petal_width
 plt.hist(x, bins = 30, color = "dodgerblue") 
-plt.title("Sepal length Histogram") 
-plt.xlabel("Sepal length (cm)") 
-plt.ylabel("Count") 
-  
-plt.savefig("sepal_length_hist.png")
-plt.clf()
-
-# Sepal Width Histogram
-plt.figure(figsize = (20, 10)) 
-x = df.sepal_width
-  
-plt.hist(x, bins = 30, color = "dodgerblue") 
-plt.title("Sepal Width Histogram") 
-plt.xlabel("Sepal Width (cm)") 
-plt.ylabel("Count") 
-  
-plt.savefig("sepal_width_hist.png")
-plt.clf()
-
-# Petal Length Histogram
-plt.figure(figsize = (20, 10)) 
+plt.title("Petal Width Histogram") 
+plt.xlabel("Petal Width (cm)") 
+plt.ylabel("Count")
+# Petal Length
+plt.subplot(2,2,2)
 x = df.petal_length
-  
 plt.hist(x, bins = 30, color = "dodgerblue") 
 plt.title("Petal Length Histogram") 
 plt.xlabel("Petal Length (cm)") 
 plt.ylabel("Count") 
-  
-plt.savefig("petal_length_hist.png")
-plt.clf()
-
-# Petal Width Histogram
-plt.figure(figsize = (20, 10)) 
-x = df.petal_width
-  
+# Sepal Width
+plt.subplot(2,2,3)
+x = df.sepal_width
 plt.hist(x, bins = 30, color = "dodgerblue") 
-plt.title("Petal Width Histogram") 
-plt.xlabel("Petal Width (cm)") 
+plt.title("Sepal Width Histogram") 
+plt.xlabel("Sepal Width (cm)") 
+plt.ylabel("Count")
+# Sepal Length
+plt.subplot(2,2,4)
+x = df.sepal_length
+plt.hist(x, bins = 30, color = "dodgerblue") 
+plt.title("Sepal length Histogram") 
+plt.xlabel("Sepal length (cm)") 
 plt.ylabel("Count") 
-  
-plt.savefig("petal_width_hist.png")
+# Save plot to .png
+plt.savefig("subplothistograms.png")
 plt.clf()
 
 
@@ -158,13 +145,6 @@ file.write("\n")
 
 file.close() 
 
-
-# Import andrews curves to visualise 
-from pandas.plotting import andrews_curves
-plt.figure()
-andrews_curves(df, 'species')
-#plt.show()
-
 # Clear all plots to speed up program
 plt.close('all')
 
@@ -173,38 +153,22 @@ plt.close('all')
 
 plt.figure(figsize = (20, 10)) 
 sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"petal_length").add_legend()
-#plt.savefig("petal_length_species.png")
+plt.savefig("petal_length_species.png")
 plt.clf()
 
 plt.figure(figsize = (20, 10))
 sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"petal_width").add_legend()
-#plt.savefig("petal_width_species.png")
+plt.savefig("petal_width_species.png")
 plt.clf()
 
 plt.figure(figsize = (20, 10))
 sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"sepal_length").add_legend()
-#plt.savefig("sepal_length_species.png")
+plt.savefig("sepal_length_species.png")
 plt.clf()
 
 plt.figure(figsize = (20, 10))
 sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"sepal_width").add_legend()
-#plt.savefig("sepal_width_species.png")
+plt.savefig("sepal_width_species.png")
 plt.clf()
 
 print("Analysis Complete")
-
-
-#sns.set(style="whitegrid")
-#plt.figure(figsize=(20,10))
-#
-#plt.subplot(2,2,1)
-#sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"petal_length").add_legend()
-#plt.subplot(2,2,2)
-#sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"petal_width").add_legend()
-#plt.subplot(2,2,3)
-#sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"sepal_length").add_legend()
-#plt.subplot(2,2,4)
-#sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"sepal_width").add_legend()
-#
-#plt.savefig("facetgridhistograms.png")
-#plt.clf()

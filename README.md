@@ -253,30 +253,53 @@ The pair plot alows us to identiy the relationship in petal length.......
 
 Using the information from above we can look in more detail at the data provided
 
-#### Petal Length
+#### Histogram Initially
+
+````
+# Histogram for each variable:
+# Combine histograms in subplots to one png. 
+sns.set(style="whitegrid")
+plt.figure(figsize=(20,10))
+# Petal Width
+plt.subplot(2,2,1)
+x = df.petal_width
+plt.hist(x, bins = 30, color = "dodgerblue") 
+plt.title("Petal Width Histogram") 
+plt.xlabel("Petal Width (cm)") 
+plt.ylabel("Count")
+# Petal Length
+plt.subplot(2,2,2)
+x = df.petal_length
+plt.hist(x, bins = 30, color = "dodgerblue") 
+plt.title("Petal Length Histogram") 
+plt.xlabel("Petal Length (cm)") 
+plt.ylabel("Count") 
+# Sepal Width
+plt.subplot(2,2,3)
+x = df.sepal_width
+plt.hist(x, bins = 30, color = "dodgerblue") 
+plt.title("Sepal Width Histogram") 
+plt.xlabel("Sepal Width (cm)") 
+plt.ylabel("Count")
+# Sepal Length
+plt.subplot(2,2,4)
+x = df.sepal_length
+plt.hist(x, bins = 30, color = "dodgerblue") 
+plt.title("Sepal length Histogram") 
+plt.xlabel("Sepal length (cm)") 
+plt.ylabel("Count") 
+# Save plot to .png
+plt.savefig("subplothistograms.png")
+plt.clf()
+````
+
+reference https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/ for histogram creation
 
 ![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_length_hist.png "Logo Title Text 1")
 
 ![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_length_species.png "Logo Title Text 1")
 
-#### Petal Width
-
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_width_hist.png "Logo Title Text 1")
-
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/petal_width_species.png "Logo Title Text 1")
-
-#### Sepal Length
-
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_length_hist.png "Logo Title Text 1")
-
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_length_species.png "Logo Title Text 1")
-
-#### Sepal Width
-
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_width_hist.png "Logo Title Text 1")
-
-![alt text](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_width_species.png "Logo Title Text 1")
-
+#### Histogram with added details
 
 
 
