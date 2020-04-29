@@ -48,7 +48,6 @@ plt.clf()
 
 
 #Box plot of variables
-# https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
 sns.set(style="ticks") 
 plt.figure(figsize=(20,10))
 plt.subplot(2,2,1)
@@ -63,7 +62,6 @@ plt.savefig("boxplot.png")
 plt.clf()
 
 #Violin plot of variables
-# Read info from this : https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
 sns.set(style="whitegrid")
 plt.figure(figsize=(20,10))
 plt.subplot(2,2,1)
@@ -122,10 +120,7 @@ plt.savefig("iris_pairplot")
 plt.clf()
 
 
-# Describe statistical summary 
-
-
-#Display in neater orientation : https://github.com/RitRa/Project2018-iris
+#Describe statistical summary in neater orientation 
 
 file = open("iris_summaries.txt", "w") 
 
@@ -149,7 +144,6 @@ file.close()
 plt.close('all')
 
 #Histograms allow us to isolate setosa species in the data for petal length and width
-# source : https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
 
 plt.figure(figsize = (20, 10)) 
 sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"petal_length").add_legend()

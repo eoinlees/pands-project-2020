@@ -3,10 +3,6 @@
 ### **Final Project - 2020**
 ### **Eoin Lees**
 
-
-# 
-# 
-
 ## Introduction
 
 This analysis is the final project for the Program and Scripting module in GMIT's H.Dip in data analytics in april 2020. 
@@ -78,7 +74,7 @@ This table was then imported into python using the pandas module as described be
 
 #### Modules and data imported
 
-The initial set up of teh program required importing modules and the data to python as shows in teh code below: 
+The initial set up of teh program required importing modules and the data to python as shows in the code below: 
 
 ````
 # Import necessary modules to python
@@ -96,11 +92,9 @@ The modules imported have the following functions:
 * matplotlib - a comprehensive library for creating static, animated and interactive visualisations in Python. [7] 
 * seaborn -  a data visualisation libary based on matplotlib. provides highlevel interface for drawing attractive and informative statistical graphics. [8] 
 
-
 # Main Body
 
 The following is a quick analysis of the iris data set. It's purpose is to demonstrate a a wide array of python techniques for data analysis along with providing a method for classifying the species in the data using vidual means. 
-
 
 ### Length vs width scatter plots
 
@@ -183,8 +177,6 @@ The data provided is summarised in the `irissummaries.txt` document . It give a 
 
 This data can be visualised using the box plot and the violin plot. 
 
-The data presented in 
-
 #### Box Plot
 
 The box plot was chosen as it gives a good visual representation of the data. The top and bottom represent the 75th and 25th percentiles. The median value is shown with the horizontal line and the rest is shown with the straight line known as the whiskers. Using this method we can easily see the outliers shown as the points on each graph. 
@@ -212,7 +204,7 @@ It draws heavily on the seaborn module in order to produce the plot. Matplotlib 
 
 The violin plot performs a similar role as the box plot. It differs from the boxplot by showing the kernal density estimation of the underlying distribution.
 
-The kernal density estimation..... 
+The kernal density estimation is a non parametric way to estimate the probability density function of a random variable. 
 
 ````
 sns.set(style="whitegrid")
@@ -247,8 +239,7 @@ It is an extremely useful tool in data analytics. It provides an immediate overv
 
 ![Pair Plot](https://github.com/eoinlees/pands-project-2020/blob/master/iris_pairplot.png "Pair Plot")
 
-The pair plot alows us to identiy the relationship in petal length.......
-
+The pair plot alows us to identiy the specific plots we wish to look at in more detail. 
 
 
 ## Detailed Analysis
@@ -301,19 +292,44 @@ plt.clf()
 
 It is clear a more detailed vew of each plot is needed. 
 
-If we look at both sepal length and width it is clear to see that these measurments do not give us much opportunity to differentiate each species. We could draw some conclusions based on teh number of samples 
+If we look at both sepal length and width it is clear to see that these measurments do not give us much opportunity to differentiate each species. We could draw some conclusions based on the number of samples.
 
-
+The code below shows how the facetgrid was created for the sepal length and with. It includes the `distplot` command to show the kernal density estimate along with the histogram. 
+```` 
+plt.figure(figsize = (20, 10))
+sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"sepal_length").add_legend()
+plt.savefig("sepal_length_species.png")
+plt.clf()
+```` 
+````
+plt.figure(figsize = (20, 10))
+sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"sepal_width").add_legend()
+plt.savefig("sepal_width_species.png")
+plt.clf()
+````
 ![Sepal Length](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_length_species.png "Sepal Length")
 
 ![Sepal Width](https://github.com/eoinlees/pands-project-2020/blob/master/sepal_width_species.png "Sepal Width")
 
 
-Looking at Petal length we can identify Iris setosa easily. The data presented in Petal width is 
+Looking at Petal length we can identify Iris setosa easily. 
+
+````
+plt.figure(figsize = (20, 10)) 
+sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"petal_length").add_legend()
+plt.savefig("petal_length_species.png")
+plt.clf()
+````
+````
+plt.figure(figsize = (20, 10))
+sns.FacetGrid(df,hue="species",height=7, aspect=2).map(sns.distplot,"petal_width").add_legend()
+plt.savefig("petal_width_species.png")
+plt.clf()
+````
+
 ![Petal Length](https://github.com/eoinlees/pands-project-2020/blob/master/petal_length_species.png "Petal Length")
 
 ![Petal Width](https://github.com/eoinlees/pands-project-2020/blob/master/petal_width_species.png "Petal Width")
-
 
 
 # Conclusions
@@ -324,10 +340,14 @@ An approxomation of Iris verginica and Iris versicolor can be made with the spec
 
 ### Classifications
 
-The simpliest method of classification is 
+The simpliest method of classification is:
+* If Petal width <= 1cm
+    then setosa
+* If petal width <= 1.5cm 
+    then high probability virginic
+* otherwise its versicolor
 
 
-This data set is a good 
 
 Further analysis is possible to deduce a more accurate classification using machine learning techniques. The scikit learn module is reccomended for further research into the area of machine learning with python. [14]
 
