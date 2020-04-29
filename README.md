@@ -30,25 +30,25 @@ It will generate all of the plots shows in this readme along with the `iris_summ
 
 ## Background
 
-Info reguarding the iris Data set and its history
+The Iris flower data set, also known as Fisher's Iris data set or Anderson's Iris data set is a multivariate data set introduced in 1936 by biologist Ronald Fisher. It is widely used as a beginners data set for data analytics specifically in machine learning. 
 
-Who was Ronald Fisher
+Ronald Fisher was a well known statistician and geneticist born in London in 1890. His contribution to statistics has him described as "the single most important figure in 20th century statistics" [1] The data set was first published by the Annals of Eugenics in September 1936 in a report titled "the use of multiple measurments in taxonomic problems" 
 
-Who was Edgar Anderson
+In his report Fisher developed and evaluated a linear function to differentiate Iris species based on the morphology if their flowers. 
 
-What did He measure and How
+The data used in his article was collected by Dr. Edgar Anderson, a botanist at the Washington University in St. Louis. The data was colected in its majority at the Gaspé Peninsula in Canada. 
+
+Dr. Anderson measured four secific characteristics of the iris, petal length, petal width, sepal length and sepal width. He also specified which spicies of iris the measurments came from, either Iris setosa, Iris versicolor or Iris virginica. All of these are shown below. 
 
 ![Iris Types](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png "Types of Iris in data")
 
-Types of Iris [3] 
+Types of Iris [4] 
 
-https://en.wikipedia.org/wiki/Iris_flower_data_set
-https://en.wikipedia.org/wiki/Ronald_Fisher
-https://en.wikipedia.org/wiki/Edgar_Anderson
+It is worth noting that the analytic method to tell the difference between the species was useful, however botanists had a better method to tell the difference based on the morphology of the seeds. 
 
 ## Data Format 
 
-The csv data was obtained from the following git hub reposityry in csv format [1]. It was complied from the origional data set published by the UCI machine learning repository [2]. This repository is a collection of databases used by teh machine learning community for the empirical analysis of machine learning algorithms. It was created by a number of graduates of the University of California Irvine in 1987.  
+The csv data was obtained from the following git hub reposityry in csv format [2]. It was complied from the origional data set published by the UCI machine learning repository [3]. This repository is a collection of databases used by teh machine learning community for the empirical analysis of machine learning algorithms. It was created by a number of graduates of the University of California Irvine in 1987.  
  
 The following table shows a sample of the data as it is presented in the csv file. 
 
@@ -67,6 +67,13 @@ The following table shows a sample of the data as it is presented in the csv fil
 |148           |6.2|          3.4|           5.4|          2.3|  virginica|
 |149           |5.9|          3.0|           5.1|          1.8|  virginica|
 
+There are five variables in the data:
+* sepal_length - measured in cm
+* sepal_width  - measured in cm
+* petal_length - measured in cm
+* petal_width  - measured in cm
+* species      - setosa, versicolor or virginica
+
 This table was then imported into python using the pandas module as described below. 
 
 #### Modules and data imported
@@ -84,16 +91,15 @@ import seaborn as sns
 df = pd.read_csv("iris.csv")
 ````
 The modules imported have the following functions:
-* numpy - allows fast and efficient operations on arrays of data.  [4]
-* pandas - provides high performance data structures and data analysis tools. [5]
-* matplotlib - a comprehensive library for creating static, animated and interactive visualisations in Python. [6] 
-* seaborn -  a data visualisation libary based on matplotlib. provides highlevel interface for drawing attractive and informative statistical graphics. [7] 
+* numpy - allows fast and efficient operations on arrays of data.  [5]
+* pandas - provides high performance data structures and data analysis tools. [6]
+* matplotlib - a comprehensive library for creating static, animated and interactive visualisations in Python. [7] 
+* seaborn -  a data visualisation libary based on matplotlib. provides highlevel interface for drawing attractive and informative statistical graphics. [8] 
 
 
 # Main Body
 
 The following is a quick analysis of the iris data set. It's purpose is to demonstrate a a wide array of python techniques for data analysis along with providing a method for classifying the species in the data using vidual means. 
-
 
 
 ### Length vs width scatter plots
@@ -277,19 +283,21 @@ Petal width can be used to classify one vs other vs otehr etc.
 
 # Sources
 
-[1] https://gist.github.com/curran/a08a1080b88344b0c8a7
+[1] https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5
 
-[2] https://archive.ics.uci.edu/ml/datasets/Iris
+[2] https://gist.github.com/curran/a08a1080b88344b0c8a7
 
-[3] https://www.datacamp.com/community/tutorials/machine-learning-in-r
+[3] https://archive.ics.uci.edu/ml/datasets/Iris
 
-[4] https://numpy.org/
+[4] https://www.datacamp.com/community/tutorials/machine-learning-in-r
 
-[5] https://pandas.pydata.org/docs/user_guide/index.html
+[5] https://numpy.org/
 
-[6] https://seaborn.pydata.org/tutorial/axis_grids.html
+[6] https://pandas.pydata.org/docs/user_guide/index.html
 
-[7] https://matplotlib.org/
+[7] https://seaborn.pydata.org/tutorial/axis_grids.html
+
+[8] https://matplotlib.org/
 
 https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
 
